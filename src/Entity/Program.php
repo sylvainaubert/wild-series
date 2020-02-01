@@ -30,7 +30,6 @@ class Program
      * @ORM\Column(type="string", length=255)
      */
     private $poster;
-
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category")
      * @ORM\JoinColumn(nullable=false)
