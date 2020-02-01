@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ProgramRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,10 +19,10 @@ class WildController extends AbstractController
     /**
      * @Route("/", name="wild")
      */
-    public function index()
+    public function index(ProgramRepository $programs)
     {
         return $this->render('wild/index.html.twig', [
-            'wildseries' => 'Wild Series',
+            'programs' => $programs->findAll()
         ]);
     }
 

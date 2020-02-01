@@ -1,0 +1,49 @@
+.programs {
+
+  .card {
+    border: none;
+    border-radius: 0;
+  }
+
+  .card-img-top {
+    max-height: 350px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  h2{
+    font-family: $font-title;
+    font-size: $h2-font-size;
+  }
+
+  h3{
+    font-family: $font-title;
+    font-size: $h3-font-size;
+  }
+
+  p{
+    font-size: $p-font-size;
+  }
+
+  @media(min-width:360px){
+    .card-columns{
+      column-count: 1;
+    }
+  }
+  @media(min-width:576px){
+    .card-columns{
+      column-count: 2;
+    }
+  }
+  @media(min-width:768px){
+    .card-columns{
+      column-count: 3;
+    }
+  }
+  @media(min-width:992px){
+    .card-columns{
+      column-count: 4;
+    }
+  }
+}
