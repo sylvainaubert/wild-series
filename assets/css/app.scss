@@ -1,5 +1,30 @@
 @import "~bootstrap/scss/bootstrap";
+@import "vars";
 
 body {
-    background-color: lightgray;
+    background-color: $background-color;
+}
+
+/* Typography */
+
+h1{
+    font-family: $font-title;
+    margin-top: 2%;
+}
+
+nav {
+    background-color: $nav-background;
+
+    .nav-link {
+        color: $text-color-primary;
+
+        &:hover{
+            color: $text-color-secondary;
+        }
+    }
+
+    .navbar-brand {
+        width: 50px;
+        border-radius: 50%;
+    }
 }
