@@ -83,4 +83,26 @@ class WildController extends AbstractController
 
     }
 
+    /**
+     * Getting three last programs in a category
+     *
+     * @Route("/category/{categoryName}", name="show_category")
+     * @param string $categoryName
+     * @param ProgramRepository $programs
+     * @param CategoryRepository $categories
+     * @return Response
+     */
+
+    public function showByCategory(string $categoryName, ProgramRepository $programs, CategoryRepository $categories): response
+    {
+        if (!$categoryName) {
+            throw $this
+                ->createNotFoundException('No category has been sent to find a program in program\'s table.');
+        }
+
+        return $this->render('wild/category.html.twig', [
+            'category' => $categories->findOneByName($categoryName),
+            'programs' => $programs->findThreeLastProgramsByCategory(),
+        ]);
+    }
 }
